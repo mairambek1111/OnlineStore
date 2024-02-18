@@ -1,0 +1,30 @@
+.hero__content {
+    position: relative;
+    z-index: -1;
+}
+
+.hero__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.hero__info {
+    position: absolute;
+    bottom: 450px;
+    left: 50px;
+    top: 250px;
+}
+.hero__title {
+    width: 740px;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 61px;
+    color: #ffffff;
+}
+
+.hero__pre__title {
+    font-size: 39px;
+    font-weight: 400;
+    line-height: 41px;
+    color: #ffffff;
+}
