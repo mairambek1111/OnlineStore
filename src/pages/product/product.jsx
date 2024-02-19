@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import "./product.css";
 import icon from "../../assets/icon-nav.svg";
 function Product() {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState({});
     const param = useParams();
     useEffect(() => {
         let items = JSON.parse(localStorage.getItem("products")) || [];

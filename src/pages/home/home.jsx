@@ -3,7 +3,6 @@ import Header from "../../components/header/header";
 import Hero from "../../components/hero/hero";
 import { useState, useEffect } from "react";
 import "./home.css";
-import Sales from "../../components/sales/sales";
 import { useNavigate } from "react-router-dom";
 function Home() {
     const [data, setData] = useState([]);
@@ -24,12 +23,10 @@ function Home() {
         <>
             <Header />
             <Hero />
-            <Sales />
             <h1 className="home__title">HOT DEALS</h1>
-            <input />
 
             <div className="cards">
-                {data.map((product) => (
+                {data.slice(0, 3).map((product) => (
                     <>
                         <div
                             className="cards"

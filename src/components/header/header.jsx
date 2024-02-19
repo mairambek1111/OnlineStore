@@ -13,6 +13,9 @@ function Header() {
                                 <img src={logoIcon} alt="" />
                             </Link>
                             <nav className="header__nav">
+                                <Link to="/Allcars/:id" className="nav__link">
+                                    ALLCARS
+                                </Link>
                                 <Link to="/" className="nav__link">
                                     HOME
                                 </Link>

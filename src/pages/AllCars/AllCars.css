@@ -1,0 +1,65 @@
+.input {
+    position: relative;
+    top: 150px;
+    left: 500px;
+    width: 500px;
+}
+
+.Cars__lists {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    padding-bottom: 25px;
+    margin-top: 260px;
+    margin-left: 50px;
+    margin-right: auto;
+}
+
+.Cars__list {
+    width: 290px;
+    height: auto;
+    background: #ffff;
+    list-style: none;
+    cursor: pointer;
+    border-radius: 14px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.Cars__list:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 1, 1.1);
+}
+.img__list {
+    display: flex;
+    width: 290px;
+    height: 310px;
+    border: none;
+    border-radius: 14px 14px 0 0;
+    object-fit: cover;
+}
+
+.Cars__title {
+    font-weight: 500;
+    font-size: 25px;
+    padding-left: 14px;
+    margin: 10px 0 10px;
+}
+
+.Cars__price {
+    font-weight: 400;
+    font-size: 18px;
+    padding-left: 14px;
+}
+
+.btn__Cars {
+    border-radius: 10px;
+    border: none;
+    padding: 6px 10px;
+    margin: 0 0 5px 14px;
+    cursor: pointer;
+    background: #ffae33;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #12100c;
+}
