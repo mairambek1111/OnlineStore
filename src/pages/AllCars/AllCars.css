@@ -3,6 +3,7 @@
     top: 150px;
     left: 500px;
     width: 500px;
+    gap: 7px;
 }
 
 .Cars__lists {
@@ -62,4 +63,10 @@
     align-items: center;
     gap: 5px;
     color: #12100c;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn__Cars:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 1, 1.1);
 }

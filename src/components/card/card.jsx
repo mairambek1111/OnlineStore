@@ -13,6 +13,7 @@ function Card({ products }) {
             <button className="btn__card">
                 добавить в корзину <img src={icon} alt="" width={20} />
             </button>
+            <button className="btn__card">Edit</button>
         </div>
     );
 }

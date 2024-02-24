@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../../components/header/header";
 import "./addproduct.css";
+import { useLocation } from "react-router-dom";
 
 function Addproduct() {
     const [data, setdata] = useState({
@@ -10,20 +11,45 @@ function Addproduct() {
         descrip: "",
     });
 
+    const [editing, setEditing] = useState(false);
+
+    const { search } = useLocation();
+    const param = new URLSearchParams(search);
+    const id = param.get("Editid");
+    useEffect(() => {
+        if (id !== null) {
+            let items = JSON.parse(localStorage.getItem("products")) || [];
+            const editproducts = items.find((el) => el.id == id);
+            if (editproducts) {
+                setdata(editproducts);
+                setEditing(true);
+            }
+        }
+    }, [id]);
+
     function submitHandler(e) {
         e.preventDefault();
-        const product = {
+        let product = {
             ...data,
             id: new Date().getTime(),
             date: new Date().getTime(),
         };
-        let products = JSON.parse(localStorage.getItem("products")) || [];
-        if (!Array.isArray(products)) {
-            products = [];
-        }
-        products.push(product);
 
-        localStorage.setItem("products", JSON.stringify(products));
+        const products = JSON.parse(localStorage.getItem("products")) || [];
+        if (editing) {
+            let updateProducts = products.map((el) => {
+                if (el.id == product.id) {
+                    return product;
+                } else {
+                    return el;
+                }
+            });
+
+            localStorage.setItem("products", JSON.stringify(updateProducts));
+        } else {
+            products.push(product);
+            localStorage.setItem("products", JSON.stringify(products));
+        }
 
         setdata({
             url: "",
@@ -46,6 +72,7 @@ function Addproduct() {
                                 setdata({ ...data, url: e.target.value })
                             }
                         />
+
                         <input
                             placeholder="Name"
                             value={data.name}
@@ -70,8 +97,8 @@ function Addproduct() {
                             }
                             className="form__input"
                         />
-                        <button onClick={submitHandler} className="btn__input">
-                            SUBMIT
+                        <button type="submit" className="btn__input">
+                            {editing ? "Edit" : "SUBMIT"}
                         </button>
                     </form>
                 </div>
