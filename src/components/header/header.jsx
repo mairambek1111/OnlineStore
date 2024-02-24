@@ -14,7 +14,7 @@ function Header() {
               </Link>
               <nav className="header__nav">
                 <Link to="/Allcars/:id" className="nav__link">
-                  ALLCARS AZIRET sultan
+                  ALLCARS AZIRET sultan lol
                 </Link>
                 <Link to="/" className="nav__link">
                   HOME
