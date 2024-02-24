@@ -23,6 +23,7 @@ function Addproduct() {
             if (editproducts) {
                 setdata(editproducts);
                 setEditing(true);
+                console.log(data);
             }
         }
     }, [id]);
